@@ -20,7 +20,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/test', function () {
-    return 'Prueba';
+    return 'Prueba main';
 });
 
 require __DIR__.'/auth.php';
