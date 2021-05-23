@@ -15,6 +15,12 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class, 'index'])->name('index');
 
+Route::get('/post', [PostController::class, 'postcreate'])->name('postcreate');
+
+Route::get('/articulo/{slug}', [PostController::class, 'search'])->name('search');
+
+Route::get('/categoria/{category}', [PostController::class, 'category'])->name('category');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
