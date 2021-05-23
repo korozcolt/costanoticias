@@ -13,4 +13,6 @@ class Page extends Model
         'url',
         'name'
        ];
+
+       protected $guarded = [];
 }
