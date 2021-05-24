@@ -29,9 +29,9 @@ jobs:
         - name: Setup Node.js
       uses: actions/setup-node@v2-beta
       with:
-      node-version: '16'
-      check-latest: true
+        node-version: '16.0.0'
+        check-latest: true
       - name: Install NPM dependencies
-      run: npm install
+        run: npm install
       - name: Compile assets for production
-      run: npm run production
+        run: npm run production
