@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,9 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [PostController::class, 'index'])->name('index');
+
+    Route::get('/', [PostController::class, 'index'])->middleware('visitor')->name('index');
+
 
 Route::get('/post', [PostController::class, 'postcreate'])->name('postcreate');
 Route::get('/add-post', [PostController::class, 'show'])->name('show');
@@ -22,9 +25,7 @@ Route::get('/articulo/{slug}', [PostController::class, 'search'])->name('search'
 
 Route::get('/categoria/{category}', [PostController::class, 'category'])->name('category');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/test', function () {
     return 'Prueba main';
