@@ -16,6 +16,7 @@ use App\Http\Controllers\PostController;
 Route::get('/', [PostController::class, 'index'])->name('index');
 
 Route::get('/post', [PostController::class, 'postcreate'])->name('postcreate');
+Route::get('/add-post', [PostController::class, 'show'])->name('show');
 
 Route::get('/articulo/{slug}', [PostController::class, 'search'])->name('search');
 
