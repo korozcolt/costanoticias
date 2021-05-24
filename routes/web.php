@@ -14,18 +14,18 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-
-    Route::get('/', [PostController::class, 'index'])->middleware('visitor')->name('index');
-
-
-Route::get('/post', [PostController::class, 'postcreate'])->name('postcreate');
-Route::get('/add-post', [PostController::class, 'show'])->name('show');
-
+// ------------------------------- ROUTES WITHOUT AUTH -------------------------------------------------------
+// ------------------------------- PAGE ROUTES ---------------------------------------------------------------
+Route::get('/', [PostController::class, 'index'])->middleware('visitor')->name('index');
 Route::get('/articulo/{slug}', [PostController::class, 'search'])->name('search');
-
 Route::get('/categoria/{category}', [PostController::class, 'category'])->name('category');
-
+// ------------------------------- ROUTES AUTH ---------------------------------------------------------------
+// ------------------------------- DASHBOARD -----------------------------------------------------------------
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+// ------------------------------- POST CONTROL --------------------------------------------------------------
+Route::get('/post', [PostController::class, 'postcreate'])->middleware(['auth'])->name('postcreate');
+Route::get('/add-post', [PostController::class, 'show'])->middleware(['auth'])->name('show');
+
 
 Route::get('/test', function () {
     return 'Prueba main';
