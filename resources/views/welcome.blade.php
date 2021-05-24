@@ -39,7 +39,7 @@
 											<div class="slider-wrap">
 												<div class="slide" data-thumb="images/magazine/thumb/1.jpg">
 													<a href="#">
-														<img src="images/magazine/1.jpg" alt="Image">
+														<img src="{{ asset('images/magazine/1.jpg') }}" alt="Image">
 														<div class="bg-overlay">
 															<div class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
 																<div class="portfolio-desc py-0">
@@ -52,7 +52,7 @@
 												</div>
 												<div class="slide" data-thumb="images/magazine/thumb/2.jpg">
 													<a href="#">
-														<img src="images/magazine/2.jpg" alt="Image">
+														<img src="{{ asset('images/magazine/2.jpg') }}" alt="Image">
 														<div class="bg-overlay">
 															<div class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
 																<div class="portfolio-desc py-0">
@@ -65,7 +65,7 @@
 												</div>
 												<div class="slide" data-thumb="images/magazine/thumb/3.jpg">
 													<a href="#">
-														<img src="images/magazine/3.jpg" alt="Image">
+														<img src="{{ asset('images/magazine/3.jpg') }}" alt="Image">
 														<div class="bg-overlay">
 															<div class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
 																<div class="portfolio-desc py-0">
@@ -76,12 +76,12 @@
 														</div>
 													</a>
 												</div>
-												<div class="slide" data-thumb="images/magazine/thumb/4.jpg">
+												<div class="slide" data-thumb="{{ asset('images/magazine/4.jpg') }}">
 													<iframe src="https://player.vimeo.com/video/99895335" width="500" height="281" allow="autoplay; fullscreen" allowfullscreen></iframe>
 												</div>
 												<div class="slide" data-thumb="images/magazine/thumb/5.jpg">
 													<a href="#">
-														<img src="images/magazine/5.jpg" alt="Image">
+														<img src="{{ asset('images/magazine/5.jpg') }}" alt="Image">
 														<div class="bg-overlay">
 															<div class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
 																<div class="portfolio-desc py-0">
@@ -94,7 +94,7 @@
 												</div>
 												<div class="slide" data-thumb="images/magazine/thumb/6.jpg">
 													<a href="#">
-														<img src="images/magazine/6.jpg" alt="Image">
+														<img src="{{ asset('images/magazine/6.jpg') }}" alt="Image">
 														<div class="bg-overlay">
 															<div class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
 																<div class="portfolio-desc py-0">
@@ -120,7 +120,7 @@
 										<div class="entry row mb-5">
 											<div class="col-md-6">
 												<div class="entry-image">
-													<a href="#"><img src="images/magazine/7.jpg" alt="Image"></a>
+													<a href="#"><img src="{{ asset('images/magazine/7.jpg') }}" alt="Image"></a>
 												</div>
 											</div>
 											<div class="col-md-6 mt-3 mt-md-0">
@@ -230,7 +230,7 @@
 								</div>
 
 								<div class="col-12">
-									<img src="images/magazine/ad.jpg" alt="Ad" class="aligncenter my-0">
+									<img src="{{ asset('images/magazine/ad.jpg') }}" alt="Ad" class="aligncenter my-0">
 								</div>
 
 								<div class="col-12">
