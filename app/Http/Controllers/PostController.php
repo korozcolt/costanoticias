@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 use App\Models\Post;
+use App\Models\Category;
 
 class PostController extends Controller
 {
     public function index(){
+        $posts = Post::all();
         return view('welcome');
     }
 
@@ -20,12 +22,33 @@ class PostController extends Controller
     }
 
     public function create(){
-
-        return view('admin.createpost');
+        $categories = Category::all();
+        return view('admin.createpost',compact('categories'));
     }
 
     public function store(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'content' => 'required',
+            'category' => 'required'
+        ]);
         $slug = Str::slug($request->title, '-');
+        $originalImage = $request->file('image');
+        $imageName = $slug.'.'.$originalImage->extension();  
+        $originalImage->storeAs('public/images', $imageName);
+        
+        $done = Post::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'category_id' => $request->category,
+            'slug' => $slug,
+            'image' => $imageName,
+            'author' => $request->author
+        ]);
+        
+        return redirect()->route('show')
+            ->with('success', 'Articulo agregado satisfactoriamente');
     }
 
     public function update(Request $request, $id){

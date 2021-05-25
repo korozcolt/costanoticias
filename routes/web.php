@@ -23,7 +23,8 @@ Route::get('/categoria/{category}', [PostController::class, 'category'])->name('
 // ------------------------------- DASHBOARD -----------------------------------------------------------------
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 // ------------------------------- POST CONTROL --------------------------------------------------------------
-Route::get('/post', [PostController::class, 'postcreate'])->middleware(['auth'])->name('postcreate');
+Route::get('/post', [PostController::class, 'create'])->middleware(['auth'])->name('postcreate');
+Route::post('/post', [PostController::class, 'store'])->middleware(['auth'])->name('store');
 Route::get('/add-post', [PostController::class, 'show'])->middleware(['auth'])->name('show');
 
 

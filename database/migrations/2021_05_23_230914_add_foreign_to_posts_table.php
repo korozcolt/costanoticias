@@ -14,7 +14,7 @@ class AddForeignToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->foreignId('page_id')->constrained();
+            $table->foreignId('page_id')->nullable()->constrained()->after('image');
             $table->foreignId('category_id')->constrained();
         });
     }
