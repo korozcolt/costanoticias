@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
+use App\Models\Post;
+
 class PostController extends Controller
 {
     public function index(){
@@ -13,10 +15,12 @@ class PostController extends Controller
     }
 
     public function show(){
-        return view('admin.posts');
+        $posts = Post::paginate(5);
+        return view('admin.posts',compact('posts'));
     }
 
     public function create(){
+
         return view('admin.createpost');
     }
 
