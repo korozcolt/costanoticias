@@ -3,7 +3,8 @@
 @section('content-dashboard')
     <div class="flex items-center justify-end px-4 py-3 text-right sm:px-6">
         <a href="{{ route('postcreate') }}"><button
-                class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{{ __('Nuevo Artículo') }}</button></a>
+                class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><i
+                    class="far fa-newspaper"></i> {{ __('Nuevo Artículo') }}</button></a>
     </div>
     {{-- The data table --}}
     <div class="flex flex-col">
@@ -31,15 +32,19 @@
                             <tr>
                                 <th
                                     class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Title</th>
+                                    Titulo</th>
                                 <th
                                     class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                     Link</th>
                                 <th
                                     class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Content</th>
+                                    Contenido</th>
                                 <th
                                     class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                    Categoría</th>
+                                <th
+                                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                    <i class="fas fa-cogs"></i>
                                 </th>
                             </tr>
                         </thead>
@@ -57,12 +62,15 @@
                                             </a>
                                         </td>
                                         <td class="px-6 py-4 text-sm whitespace-no-wrap">{!! \Illuminate\Support\Str::limit($item->content, 50, '...') !!}</td>
-                                        <td class="px-6 py-4 text-right text-sm">
+                                        <td class="px-6 py-4 text-sm whitespace-no-wrap">{{ $item->category->name }}</td>
+                                        <td class="px-2 py-1 text-center text-sm">
                                             <div class="inline-flex">
-                                                <button
-                                                    class="bg-green-300 hover:bg-green-400 text-green-800 font-bold py-2 px-4 rounded-l">
-                                                    Editar
-                                                </button>
+                                                <a href="{{ route('edit', $item->id) }}">
+                                                    <button
+                                                        class="bg-green-300 hover:bg-green-400 text-green-800 font-bold py-2 px-4 rounded-l">
+                                                        Editar
+                                                    </button>
+                                                </a>
                                                 <button
                                                     class="bg-red-300 hover:bg-red-400 text-red-800 font-bold py-2 px-4 rounded-r">
                                                     Borrar

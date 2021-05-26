@@ -28,10 +28,11 @@ class PostController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|unique:posts',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'content' => 'required',
-            'category' => 'required'
+            'category' => 'required',
+            'author' => 'required'
         ]);
         $slug = Str::slug($request->title, '-');
         $originalImage = $request->file('image');
@@ -49,6 +50,13 @@ class PostController extends Controller
         
         return redirect()->route('show')
             ->with('success', 'Articulo agregado satisfactoriamente');
+    }
+
+    public function edit($id){
+        $post = Post::findOrFail($id);
+        $categories = Category::all();
+
+        return view('admin.updatepost',compact('post', 'categories'));
     }
 
     public function update(Request $request, $id){
