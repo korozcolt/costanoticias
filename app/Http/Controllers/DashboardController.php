@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Visitor;
+use App\Models\Post;
+use App\Models\Category;
+
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
@@ -15,7 +18,11 @@ class DashboardController extends Controller
         {
             array_push($chart_data, array($data->date->format('d.m.Y'), $data->total));
         }
+        
+        $count_posts = Post::count();
+        $count_categories = Category::count();
+        $count_visitors = $visitors->count();
 
-        return view('dashboard', compact(['visitors', 'chart_data']));
+        return view('admin.dashboard', compact(['visitors', 'chart_data','count_posts','count_categories','count_visitors']));
     }
 }

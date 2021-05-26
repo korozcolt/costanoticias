@@ -13,8 +13,19 @@ class Post extends Model
         'title',
         'slug',
         'content',
-        'author'
+        'image',
+        'category_id',
+        'author',
+        'created_at'
        ];
 
        protected $guarded = [];
+
+       public function category(){
+           return $this->belongsTo(Category::class);
+       }
+
+       public function page(){
+        return $this->belongsTo(Page::class);
+    }
 }
