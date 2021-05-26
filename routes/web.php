@@ -28,6 +28,7 @@ Route::get('/add-post', [PostController::class, 'create'])->middleware(['auth'])
 Route::post('/post', [PostController::class, 'store'])->middleware(['auth'])->name('store');
 Route::get('/update/{id}/post', [PostController::class, 'edit'])->middleware(['auth'])->name('edit');
 Route::put('/update/post', [PostController::class, 'update'])->middleware(['auth'])->name('update');
+Route::delete('/delete/{id}/post', [PostController::class, 'destroy'])->middleware(['auth'])->name('destroy');
 
 
 Route::get('/test', function () {

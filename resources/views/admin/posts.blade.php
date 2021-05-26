@@ -71,10 +71,14 @@
                                                         Editar
                                                     </button>
                                                 </a>
-                                                <button
-                                                    class="bg-red-300 hover:bg-red-400 text-red-800 font-bold py-2 px-4 rounded-r">
-                                                    Borrar
-                                                </button>
+                                                <form method="POST" action="{{ route('destroy', $item->id) }}">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button type="submit"
+                                                        class="bg-red-300 hover:bg-red-400 text-red-800 font-bold py-2 px-4 rounded-r">
+                                                        Borrar
+                                                    </button>
+                                                </form>
                                             </div>
                                         </td>
                                     </tr>
