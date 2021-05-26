@@ -11,10 +11,33 @@ use App\Models\Category;
 
 class PostController extends Controller
 {
+
+    //--------------------- INDEX CONTROLLER
+
     public function index(){
         $posts = Post::all();
-        return view('welcome');
+        $last = Post::paginate(5)->sortBy('created_at');
+        $categories = Category::all();
+        return view('welcome',compact('posts','categories','last'));
     }
+
+    public function searchSlug($slug){
+        $post = Post::where('slug',$slug);
+        $categories = Category::all();
+        $last = Post::paginate(5)->sortBy('created_at');
+        return view('slug',compact('post'));
+    }
+
+    public function category($id){
+        $posts = Post::where('category_id',$id);
+        $categories = Category::all();
+        $category = Category::find($id);
+        $last = Post::paginate(5)->sortBy('created_at');
+        $lastPostCategory = Post::where('category_id',$id)->first();
+        return view('category',compact('posts','category','categories','last','lastPostCategory'));
+    }
+
+    ///////////// ------------------- ADMIN CONTROLLER
 
     public function show(){
         $posts = Post::paginate(5);
@@ -70,8 +93,6 @@ class PostController extends Controller
         ->with('success', 'Articulo borrado satisfactoriamente');;
     }
 
-    public function searchSlug($slug){
-
-    }
+    
 
 }
