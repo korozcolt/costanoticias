@@ -1,7 +1,7 @@
 @extends('layouts.page')
 @section('content')
     <!-- Content
-                                                                                                                                                                                  ============================================= -->
+                                                                                                                                                                                                                                                                                                                      ============================================= -->
     <section id="content">
         <div class="content-wrap">
 
@@ -34,148 +34,59 @@
                 </div>
             </div>
 
-            <div class="container clearfix">
-
-                <div class="row">
-                    <div class="col-lg-12 bottommargin">
-                        <div class="row col-mb-50">
-                            <div class="col-12">
-
-                                <div class="fancy-title title-border">
-                                    <h3>{{ $category->name }}</h3>
-                                </div>
-
-                                <div class="posts-md">
-                                    <div class="entry row mb-5">
-                                        <div class="col-md-6">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="{{ asset('images/magazine/7.jpg') }}"
-                                                        alt="Image"></a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mt-3 mt-md-0">
-                                            <div class="entry-title title-sm nott">
-                                                <h3><a href="blog-single.html">Toyotas next minivan will let you shout at
-                                                        your kids without turning around</a></h3>
-                                            </div>
-                                            <div class="entry-meta">
-                                                <ul>
-                                                    <li><i class="icon-calendar3"></i> 10th Feb 2021</li>
-                                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
-                                                            21</a></li>
-                                                    <li><a href="#"><i class="icon-camera-retro"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="entry-content">
-                                                <p class="mb-0">Asperiores, tenetur, blanditiis, quaerat odit ex
-                                                    exercitationem pariatur quibusdam veritatis quisquam laboriosam esse
-                                                    beatae hic perferendis.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="posts-sm row col-mb-30">
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/1.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">UK government weighs Tesla's Model S for its 5 million
-                                                            electric vehicle fleet</a></h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 1st Aug 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 32</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/2.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">MIT's new robot glove can give you extra fingers</a>
-                                                    </h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 13th Sep 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 11</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/3.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">You can now listen to headphones through your hoodie</a>
-                                                    </h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 27th July 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 13</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/4.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">How would you change Kobo's Aura HD e-reader?</a></h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 31st Jan 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 7</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+            <!-- Posts
+                                                                                                                                        ============================================= -->
+            <div id="posts" class="post-grid grid-container row gutter-40 mx-3">
+                @forelse ($posts as $post)
+                    <div class="entry col-md-4 col-sm-6 col-12">
+                        <div class="grid-inner">
+                            <div class="entry-image">
+                                <a href="{{ router('search', $post->slug) }}"><img src="images/blog/small/17.jpg"
+                                        alt="{{ $post->image }}"></a>
                             </div>
-
-                            <div class="col-12">
-                                <img src="{{ asset('images/magazine/ad.jpg') }}" alt="Ad" class="aligncenter my-0">
+                            <div class="entry-title">
+                                <h2><a href="blog-single.html">{{ $post->title }}</a></h2>
                             </div>
-
+                            <div class="entry-meta">
+                                <ul>
+                                    <li><i class="icon-calendar3"></i> {{ $post->created_at->diffForHumans() }}</li>
+                                    <li><a href="{{ router('search', $post->slug) }}"><i class="icon-user"></i>
+                                            $post->author</a></li>
+                                    <li><a href="{{ router('search', $post->slug) }}"><i class="icon-link"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                {!! \Illuminate\Support\Str::limit($post->content, 150, '...') !!}
+                                <a href="{{ router('search', $post->slug) }}" class="more-link">Ver atículo completo</a>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-
-            </div>
+                @empty
+                    <div class="entry col-md-4 col-sm-6 col-12">
+                        <div class="grid-inner">
+                            <div class="entry-image">
+                                <a href="{{ asset('images/logo@2x.png') }}" data-lightbox="image"><img
+                                        src="{{ asset('images/logo@2x.png') }}" alt="Logo Imagen"></a>
+                            </div>
+                            <div class="entry-title">
+                                <h2><a href="blog-single.html">NO HAY ARTICULOS CON ESTA CATEGORÍA AÚN</a></h2>
+                            </div>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li><i class="icon-calendar3"></i> {{ \Carbon\Carbon::now()->diffForHumans() }}</li>
+                                    <li><a href="#"><i class="icon-user"></i> Admin</a></li>
+                                    <li><a href="#"><i class="icon-link"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est
+                                    tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus.</p>
+                                <a href="blog-single.html" class="more-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforelse
+            </div><!-- #posts end -->
         </div>
     </section><!-- #content end -->
 @endsection
