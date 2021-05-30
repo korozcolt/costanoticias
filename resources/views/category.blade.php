@@ -1,7 +1,7 @@
 @extends('layouts.page')
 @section('content')
     <!-- Content
-                                                                                                                                                                                                                                                                                                                      ============================================= -->
+                                                                                                                                                                                                                                                                                                                              ============================================= -->
     <section id="content">
         <div class="content-wrap">
 
@@ -35,7 +35,7 @@
             </div>
 
             <!-- Posts
-                                                                                                                                        ============================================= -->
+                                                                                                                                                ============================================= -->
             <div id="posts" class="post-grid grid-container row gutter-40 mx-3">
                 @forelse ($posts as $post)
                     <div class="entry col-md-4 col-sm-6 col-12">
