@@ -17,7 +17,7 @@ use App\Http\Controllers\DashboardController;
 // ------------------------------- ROUTES WITHOUT AUTH -------------------------------------------------------
 // ------------------------------- PAGE ROUTES ---------------------------------------------------------------
 Route::get('/', [PostController::class, 'index'])->middleware('visitor')->name('index');
-Route::get('/articulo/{slug}', [PostController::class, 'searchSlug'])->name('search');
+Route::get('/articulo/{slug}', [PostController::class, 'search'])->name('search');
 Route::get('/categoria/{id}', [PostController::class, 'category'])->name('category');
 // ------------------------------- ROUTES AUTH ---------------------------------------------------------------
 // ------------------------------- DASHBOARD -----------------------------------------------------------------

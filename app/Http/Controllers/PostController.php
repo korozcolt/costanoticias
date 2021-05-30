@@ -21,11 +21,12 @@ class PostController extends Controller
         return view('welcome',compact('posts','categories','last'));
     }
 
-    public function searchSlug($slug){
+    public function search($slug){
         $post = Post::where('slug',$slug);
         $categories = Category::all();
+        $related = Post::where('category_id',$post->id)->orderBy('created_at')->get();
         $last = Post::paginate(5)->sortBy('created_at');
-        return view('slug',compact('post'));
+        return view('slug',compact('post','last','categories'));
     }
 
     public function category($id){
