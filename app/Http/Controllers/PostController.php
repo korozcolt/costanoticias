@@ -26,7 +26,7 @@ class PostController extends Controller
         $categories = Category::all();
         $related = Post::where('category_id',$post->id)->orderBy('created_at')->get();
         $last = Post::paginate(5)->sortBy('created_at');
-        return view('slug',compact('post','last','categories'));
+        return view('slug',compact('post','last','categories','related'));
     }
 
     public function category($id){
