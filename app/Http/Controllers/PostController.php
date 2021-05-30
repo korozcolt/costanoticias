@@ -22,7 +22,7 @@ class PostController extends Controller
     }
 
     public function search($slug){
-        $post = Post::where('slug',$slug);
+        $post = Post::where('slug',$slug)->first();
         $categories = Category::all();
         $related = Post::where('category_id',$post->id)->orderBy('created_at')->get();
         $last = Post::paginate(5)->sortBy('created_at');
