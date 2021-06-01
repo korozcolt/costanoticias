@@ -1,7 +1,7 @@
 @extends('layouts.page')
 @section('content')
     <!-- Content
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ============================================= -->
     <section id="content">
         <div class="content-wrap">
 
@@ -35,11 +35,11 @@
             </div>
 
             <!-- Page Title
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ============================================= -->
             <section id="page-title">
 
                 <div class="container clearfix">
-                    <h1>Blog Single</h1>
+                    <h1>{!! \Illuminate\Support\Str::limit($post->title, 20, '...') !!}</h1>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
                         <li class="breadcrumb-item"><a
@@ -51,7 +51,7 @@
             </section><!-- #page-title end -->
 
             <!-- Content
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ============================================= -->
             <section id="content">
                 <div class="content-wrap">
                     <div class="container clearfix">
@@ -59,17 +59,17 @@
                         <div class="single-post mb-0">
 
                             <!-- Single Post
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ============================================= -->
                             <div class="entry clearfix">
 
                                 <!-- Entry Title
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ============================================= -->
                                 <div class="entry-title">
                                     <h2>{{ $post->title }}</h2>
                                 </div><!-- .entry-title end -->
 
                                 <!-- Entry Meta
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ============================================= -->
                                 <div class="entry-meta">
                                     <ul>
                                         <li><i class="icon-calendar3"></i> {{ $post->created_at->diffForHumans() }}</li>
@@ -82,14 +82,14 @@
                                 </div><!-- .entry-meta end -->
 
                                 <!-- Entry Image
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ============================================= -->
                                 <div class="entry-image bottommargin">
                                     <a href="#"><img src="{{ asset('storage/images/' . $post->image) }}"
                                             alt="{{ $post->image }}"></a>
                                 </div><!-- .entry-image end -->
 
                                 <!-- Entry Content
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ============================================= -->
                                 <div class="entry-content mt-0">
 
                                     {!! $post->content !!}
@@ -99,9 +99,9 @@
                                     <div class="clear"></div>
 
                                     <!-- Post Single - Share
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ============================================= -->
-                                    <div class="border-0 justify-content-between align-items-center">
-                                        <span>Comparte esta nota:</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ============================================= -->
+                                    <div class="border-0 align-items-center">
+                                        <span><strong> Comparte esta nota:</strong> </span>
                                         <div>
                                             <div class="fb-share-button social-icon si-borderless m-8"
                                                 data-href="{{ URL::to('/articulo/' . $post->slug) }}"
@@ -114,7 +114,7 @@
                             </div><!-- .entry end -->
 
                             <!-- Post Navigation
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ============================================= -->
                             <h4>Articulos relacionados:</h4>
 
                             <div class="related-posts row posts-md col-mb-30">

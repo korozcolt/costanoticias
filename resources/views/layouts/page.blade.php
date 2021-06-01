@@ -9,7 +9,7 @@
     <meta name="description"
         content="Sitio de noticias activas, al día, de sincelejo y toda la costa caribe colombiana.">
     <meta name="keywords"
-        content="noticias caracol,noticias,noticias caracol en vivo,caracol noticias,noticias rcn,el tiempo noticias,noticias el tiempo,	rcn noticias,caracol noticias en vivo,rt noticias,ultimas noticias,hotmail noticias,	noticias de hoy,noticias rcn en vivo,noticias uno,noticias de colombia,chica noticias,noticias de venezuela,google noticias,noticias caracol en vivo hoy,noticias colombia,noticias hoy,noticias caracol tv en vivo,noticias del mundo,noticias internacionales,noticias google,ultimas noticias de colombia,msn noticias,noticias en vivo,noticias el espectador,teleantioquia noticias,	noticias uno en vivo,rcn noticias en vivo,	noticias caracol hoy,	noticias de cali,google noticias colombia,noticias venezuela,noticias al dia,noticias de venezuela hoy,noticias caracol ahora,noticias google colombia,ultimas noticias colombia,noticias hotmail,noticias caracol tv,noticias colombia hoy,noticias en vivo caracol,noticias de colombia hoy,noticias caracol en vivo y en directo,caracol en vivo noticias,noticias bogota,teleantioquia noticias en vivo,noticias del america de cali,pitalito noticias,noticias cali,noticias de colombia y el mundo,noticias caracol hoy en vivo,noticias popayan,pulzo noticias,quindio noticias,ultimas noticias de venezuela,noticias economicas,noticias de millonarios,noticias de ibague,noticias deportivas,noticias cristianas,noticias de bogota,canal caracol noticias,noticias medellin,eltiempo noticias,noticias de boyaca,noticias 24,ultimas noticias el tiempo,ultimas noticias caracol,noticias caracol señal en vivo,noticias cartagena,noticias de antioquia,ultimas noticias del coronavirus en colombia,noticias rt,sputnik noticias,el espectador noticias,noticias de cali hoy,noticias del mundo hoy,bbc noticias,noticias bogota hoy,principales noticias de colombia y el mundo,noticias nacionales,noticias ultima hora,noticias hoy colombia,noticias de ultima hora	,noticias rcn hoy,noticias del tiempo,noticias actuales,ultimas noticias de colombia y el mundo	,noticias de atletico nacional,canal caracol en vivo noticias,caracol tv noticias,noticias cortas,el tiempo noticias hoy,noticias de hoy en colombia,ultimas noticias bogota,">
+        content="noticias caracol,noticias,noticias caracol en vivo,caracol noticias,noticias rcn,el tiempo noticias,noticias el tiempo, rcn noticias,caracol noticias en vivo,rt noticias,ultimas noticias,hotmail noticias,	noticias de hoy,noticias rcn en vivo,noticias uno,noticias de colombia,chica noticias,noticias de venezuela,google noticias,noticias caracol en vivo hoy,noticias colombia,noticias hoy,noticias caracol tv en vivo,noticias del mundo,noticias internacionales,noticias google,ultimas noticias de colombia,msn noticias,noticias en vivo,noticias el espectador,teleantioquia noticias,	noticias uno en vivo,rcn noticias en vivo,	noticias caracol hoy,	noticias de cali,google noticias colombia,noticias venezuela,noticias al dia,noticias de venezuela hoy,noticias caracol ahora,noticias google colombia,ultimas noticias colombia,noticias hotmail,noticias caracol tv,noticias colombia hoy,noticias en vivo caracol,noticias de colombia hoy,noticias caracol en vivo y en directo,caracol en vivo noticias,noticias bogota,teleantioquia noticias en vivo,noticias del america de cali,pitalito noticias,noticias cali,noticias de colombia y el mundo,noticias caracol hoy en vivo,noticias popayan,pulzo noticias,quindio noticias,ultimas noticias de venezuela,noticias economicas,noticias de millonarios,noticias de ibague,noticias deportivas,noticias cristianas,noticias de bogota,canal caracol noticias,noticias medellin,eltiempo noticias,noticias de boyaca,noticias 24,ultimas noticias el tiempo,ultimas noticias caracol,noticias caracol señal en vivo,noticias cartagena,noticias de antioquia,ultimas noticias del coronavirus en colombia,noticias rt,sputnik noticias,el espectador noticias,noticias de cali hoy,noticias del mundo hoy,bbc noticias,noticias bogota hoy,principales noticias de colombia y el mundo,noticias nacionales,noticias ultima hora,noticias hoy colombia,noticias de ultima hora	,noticias rcn hoy,noticias del tiempo,noticias actuales,ultimas noticias de colombia y el mundo	,noticias de atletico nacional,canal caracol en vivo noticias,caracol tv noticias,noticias cortas,el tiempo noticias hoy,noticias de hoy en colombia,ultimas noticias bogota,">
     <meta name="robots" content="index, follow">
     <meta name="revisit-after" content="1 days">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -22,7 +22,7 @@
     <meta property="og:title" content="Costa Noticias | CN&">
     <meta property="og:description"
         content="Sitio de noticias activas, al día, de sincelejo y toda la costa caribe colombiana.">
-    <meta property="og:image" content="">
+    <meta property="og:image" content="{{ asset('images/logo@2x.png') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -30,7 +30,7 @@
     <meta property="twitter:title" content="Costa Noticias | CN&">
     <meta property="twitter:description"
         content="Sitio de noticias activas, al día, de sincelejo y toda la costa caribe colombiana.">
-    <meta property="twitter:image" content="">
+    <meta property="twitter:image" content="{{ asset('images/logo@2x.png') }}">
 
     <!-- Stylesheets
  ============================================= -->
@@ -96,8 +96,8 @@
                         <div class="top-links on-click">
                             <ul class="top-links-container">
                                 <li class="top-links-item"><a href="{{ route('index') }}">Inicio</a></li>
-                                <li class="top-links-item"><a href="faqs.html">PQRs</a></li>
-                                <li class="top-links-item"><a href="contact.html">Contáctanos</a></li>
+                                <li class="top-links-item"><a href="#">PQRs</a></li>
+                                <li class="top-links-item"><a href="#">Contáctanos</a></li>
                             </ul>
                         </div><!-- .top-links end -->
 
@@ -114,9 +114,6 @@
                             <li><a href="#" class="si-instagram"><span class="ts-icon"><i
                                             class="icon-instagram2"></i></span><span
                                         class="ts-text">Instagram</span></a></li>
-                            <li><a href="tel:+1.11.85412542" class="si-call"><span class="ts-icon"><i
-                                            class="icon-call"></i></span><span class="ts-text">+1.11.85412542</span></a>
-                            </li>
                             <li><a href="mailto:noticias@costanoticiascni.com" class="si-email3"><span
                                         class="ts-icon"><i class="icon-email3"></i></span><span
                                         class="ts-text">noticias@costanoticiascni.com</span></a></li>
@@ -186,47 +183,47 @@
 
                             <ul class="menu-container">
                                 <li class="menu-item">
-                                    <a class="menu-link" href="#">
+                                    <a class="menu-link" href="{{ route('category', 1) }}">
                                         <div>Noticias de Sucre</div>
                                     </a>
                                 </li>
                                 <li class="menu-item mega-menu">
-                                    <a class="menu-link" href="#">
+                                    <a class="menu-link" href="{{ route('category', 2) }}">
                                         <div>Judiciales</div>
                                     </a>
                                 </li>
                                 <li class="menu-item mega-menu">
-                                    <a class="menu-link" href="#">
+                                    <a class="menu-link" href="{{ route('category', 3) }}">
                                         <div>Deporte</div>
                                     </a>
                                 </li>
                                 <li class="menu-item mega-menu">
-                                    <a class="menu-link" href="#">
+                                    <a class="menu-link" href="{{ route('category', 4) }}">
                                         <div>Farandula</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a class="menu-link" href="shop.html">
+                                    <a class="menu-link" href="{{ route('category', 5) }}">
                                         <div>Noticias del Caribe </div>
                                     </a>
                                 </li>
                                 <li class="menu-item mega-menu">
-                                    <a class="menu-link" href="#">
+                                    <a class="menu-link" href="{{ route('category', 6) }}">
                                         <div>Editorial </div>
                                     </a>
                                 </li>
                                 <li class="menu-item mega-menu">
-                                    <a class="menu-link" href="#">
+                                    <a class="menu-link" href="{{ route('category', 7) }}">
                                         <div>¡Que escándalo!</div>
                                     </a>
                                 </li>
                                 <li class="menu-item mega-menu">
-                                    <a class="menu-link" href="#">
+                                    <a class="menu-link" href="{{ route('category', 8) }}">
                                         <div>Política</div>
                                     </a>
                                 </li>
                                 <li class="menu-item mega-menu">
-                                    <a class="menu-link" href="#">
+                                    <a class="menu-link" href="{{ route('category', 9) }}">
                                         <div>Elecciones 2022</div>
                                     </a>
                                 </li>

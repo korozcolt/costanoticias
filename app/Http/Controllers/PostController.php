@@ -42,7 +42,7 @@ class PostController extends Controller
     }
 
     public function category($id){
-        $posts = Post::where('category_id',$id);
+        $posts = Post::where('category_id',$id)->get();
         $categories = Category::all();
         $category = Category::find($id);
         $last = Post::paginate(5)->sortBy('created_at');

@@ -1,7 +1,7 @@
 @extends('layouts.page')
 @section('content')
     <!-- Content
-                                                                                                                                                                                                                                                                                                                              ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                              ============================================= -->
     <section id="content">
         <div class="content-wrap">
 
@@ -35,13 +35,14 @@
             </div>
 
             <!-- Posts
-                                                                                                                                                ============================================= -->
+                                                                                                                                                                                                                                ============================================= -->
             <div id="posts" class="post-grid grid-container row gutter-40 mx-3">
                 @forelse ($posts as $post)
                     <div class="entry col-md-4 col-sm-6 col-12">
                         <div class="grid-inner">
                             <div class="entry-image">
-                                <a href="{{ router('search', $post->slug) }}"><img src="images/blog/small/17.jpg"
+                                <a href="{{ asset('articulo/' . $post->slug) }}"><img
+                                        src="{{ asset('storage/images/' . $post->image) }}"
                                         alt="{{ $post->image }}"></a>
                             </div>
                             <div class="entry-title">
@@ -50,14 +51,16 @@
                             <div class="entry-meta">
                                 <ul>
                                     <li><i class="icon-calendar3"></i> {{ $post->created_at->diffForHumans() }}</li>
-                                    <li><a href="{{ router('search', $post->slug) }}"><i class="icon-user"></i>
-                                            $post->author</a></li>
-                                    <li><a href="{{ router('search', $post->slug) }}"><i class="icon-link"></i></a></li>
+                                    <li><a href="{{ asset('articulo/' . $post->slug) }}"><i class="icon-user"></i>
+                                            {{ $post->author }}</a></li>
+                                    <li><a href="{{ asset('articulo/' . $post->slug) }}"><i class="icon-link"></i></a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
                                 {!! \Illuminate\Support\Str::limit($post->content, 150, '...') !!}
-                                <a href="{{ router('search', $post->slug) }}" class="more-link">Ver atículo completo</a>
+                                <a href="{{ asset('articulo/' . $post->slug) }}" class="more-link">Ver atículo
+                                    completo</a>
                             </div>
                         </div>
                     </div>
@@ -79,9 +82,8 @@
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est
-                                    tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus.</p>
-                                <a href="blog-single.html" class="more-link">Read More</a>
+                                <p>Pronto estaremos publicando articulos para esta categoría</p>
+                                <a href="#" class="more-link">Leer mas</a>
                             </div>
                         </div>
                     </div>
