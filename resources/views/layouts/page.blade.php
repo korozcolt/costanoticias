@@ -66,7 +66,19 @@
 </head>
 
 <body class="stretched">
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
 
+    </script>
     <!-- Document Wrapper
  ============================================= -->
     <div id="wrapper" class="clearfix">
@@ -135,7 +147,7 @@
 
                     <div class="header-misc mb-4 mb-lg-0 d-none d-lg-flex">
                         <div class="top-advert">
-                            <img src="images/magazine/ad.jpg" alt="Ad">
+                            <img src="{{ asset('images/magazine/ad.jpg') }}" alt="Ad">
                         </div>
                     </div>
                 </div>
@@ -254,15 +266,15 @@
                                 <div class="col-md-4">
 
                                     <div class="widget clearfix">
-
-                                        <img src="images/footer-widget-logo.png" alt="Image" class="footer-logo">
+                                        <img src="{{ asset('images/footer-widget-logo.png') }}" alt="Image"
+                                            class="footer-logo">
 
                                         <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp;
                                             <strong>Flexible</strong> Design Standards.
                                         </p>
 
                                         <div
-                                            style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+                                            style="background: url('{{ asset('images/world-map.png') }}') no-repeat center center; background-size: 100%;">
                                             <address>
                                                 <strong>Headquarters:</strong><br>
                                                 795 Folsom Ave, Suite 600<br>
