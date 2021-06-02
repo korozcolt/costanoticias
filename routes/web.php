@@ -19,7 +19,6 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', [PostController::class, 'index'])->middleware('visitor')->name('index');
 Route::get('/articulo/{slug}', [PostController::class, 'search'])->name('search');
 Route::get('/categoria/{id}', [PostController::class, 'category'])->name('category');
-Route::get('image/{filename}', [PostController::class, 'displayImage'])->name('displayImage');
 // ------------------------------- ROUTES AUTH ---------------------------------------------------------------
 // ------------------------------- DASHBOARD -----------------------------------------------------------------
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
@@ -30,10 +29,14 @@ Route::post('/post', [PostController::class, 'store'])->middleware(['auth'])->na
 Route::get('/update/{id}/post', [PostController::class, 'edit'])->middleware(['auth'])->name('edit');
 Route::put('/update/post', [PostController::class, 'update'])->middleware(['auth'])->name('update');
 Route::delete('/delete/{id}/post', [PostController::class, 'destroy'])->middleware(['auth'])->name('destroy');
-
-
-Route::get('/test', function () {
-    return 'Prueba main';
+// ------------------------------- ARTISAN OVER URL ----------------------------------------------------------
+Route::get('/linkstorage', function () {
+    $result = Artisan::call('storage:link');
+    return $result;
 });
-
+Route::get('/migrate', function () {
+    $result = Artisan::call('migrate');
+    return $result;
+});
+// ------------------------------- ROUTES AUTH ---------------------------------------------------------------
 require __DIR__.'/auth.php';

@@ -68,17 +68,7 @@
 <body class="stretched">
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
-    <script>
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
 
-    </script>
     <!-- Document Wrapper
  ============================================= -->
     <div id="wrapper" class="clearfix">
@@ -260,108 +250,58 @@
                         <div class="col-lg-8">
 
                             <div class="row col-mb-50">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
 
                                     <div class="widget clearfix">
                                         <img src="{{ asset('images/footer-widget-logo.png') }}" alt="Image"
                                             class="footer-logo">
 
-                                        <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp;
-                                            <strong>Flexible</strong> Design Standards.
+                                        <p>Creemos que lo <strong>Simple</strong>, <strong>Creativo</strong> &amp;
+                                            <strong>Verás</strong> hace mas por nuestros vidas.
                                         </p>
 
                                         <div
                                             style="background: url('{{ asset('images/world-map.png') }}') no-repeat center center; background-size: 100%;">
                                             <address>
-                                                <strong>Headquarters:</strong><br>
-                                                795 Folsom Ave, Suite 600<br>
-                                                San Francisco, CA 94107<br>
+                                                <strong>Instalaciones: </strong><br>
+                                                Sincelejo, Sucre<br>
                                             </address>
-                                            <abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 8547
-                                            632521<br>
-                                            <abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>
-                                            <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
+                                            <abbr title="Teléfono"><strong>Teléfono:</strong></abbr> +57 300 0000
+                                            000<br>
+                                            <abbr title="Email Address"><strong>Email:</strong></abbr>
+                                            noticias@costanoticiascni.com
                                         </div>
 
                                     </div>
 
                                 </div>
 
-                                <div class="col-md-4">
-
-                                    <div class="widget widget_links clearfix">
-
-                                        <h4>Blogroll</h4>
-
-                                        <ul>
-                                            <li><a href="https://codex.wordpress.org/">Documentation</a></li>
-                                            <li><a
-                                                    href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a>
-                                            </li>
-                                            <li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
-                                            <li><a href="https://wordpress.org/support/">Support Forums</a></li>
-                                            <li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
-                                            <li><a href="https://wordpress.org/news/">Canvas Blog</a></li>
-                                            <li><a href="https://planet.wordpress.org/">Canvas Planet</a></li>
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-4">
+                                <div class="col-md-6">
 
                                     <div class="widget clearfix">
-                                        <h4>Recent Posts</h4>
+                                        <h4>Artículos Recientes</h4>
 
                                         <div class="posts-sm row col-mb-30" id="post-list-footer">
-                                            <div class="entry col-12">
-                                                <div class="grid-inner row">
-                                                    <div class="col">
-                                                        <div class="entry-title">
-                                                            <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a>
-                                                            </h4>
-                                                        </div>
-                                                        <div class="entry-meta">
-                                                            <ul>
-                                                                <li>10th July 2021</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="entry col-12">
-                                                <div class="grid-inner row">
-                                                    <div class="col">
-                                                        <div class="entry-title">
-                                                            <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a>
-                                                            </h4>
-                                                        </div>
-                                                        <div class="entry-meta">
-                                                            <ul>
-                                                                <li>10th July 2021</li>
-                                                            </ul>
+                                            @foreach ($last as $post)
+                                                <div class="entry col-12">
+                                                    <div class="grid-inner row">
+                                                        <div class="col">
+                                                            <div class="entry-title">
+                                                                <h4><a
+                                                                        href="{{ URL::to('/articulo/' . $post->slug) }}">{{ $post->title }}</a>
+                                                                </h4>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="entry-meta">
+                                                                <ul>
+                                                                    <li>{{ $post->created_at->diffForHumans() }}
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-
-                                            <div class="entry col-12">
-                                                <div class="grid-inner row">
-                                                    <div class="col">
-                                                        <div class="entry-title">
-                                                            <h4><a href="#">Debitis nihil placeat, illum est nisi</a>
-                                                            </h4>
-                                                        </div>
-                                                        <div class="entry-meta">
-                                                            <ul>
-                                                                <li>10th July 2021</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
 
@@ -381,14 +321,14 @@
                                                 <div class="counter counter-small"><span data-from="50"
                                                         data-to="15065421" data-refresh-interval="80" data-speed="3000"
                                                         data-comma="true"></span></div>
-                                                <h5 class="mb-0">Total Downloads</h5>
+                                                <h5 class="mb-0">Total Visitas</h5>
                                             </div>
 
                                             <div class="col-lg-6 bottommargin-sm">
                                                 <div class="counter counter-small"><span data-from="100" data-to="18465"
                                                         data-refresh-interval="50" data-speed="2000"
                                                         data-comma="true"></span></div>
-                                                <h5 class="mb-0">Clients</h5>
+                                                <h5 class="mb-0">Clientes</h5>
                                             </div>
                                         </div>
 
@@ -397,8 +337,8 @@
 
                                 <div class="col-md-5 col-lg-12">
                                     <div class="widget subscribe-widget clearfix">
-                                        <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing
-                                            Offers &amp; Inside Scoops:</h5>
+                                        <h5><strong>Subscribe</strong> a nuestro boletín de noticias &amp; conviertete
+                                            en nuestro aliado:</h5>
                                         <div class="widget-subscribe-form-result"></div>
                                         <form id="widget-subscribe-form" action="include/subscribe.php" method="post"
                                             class="mb-0">
@@ -410,7 +350,7 @@
                                                     name="widget-subscribe-form-email"
                                                     class="form-control required email" placeholder="Enter your Email">
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-success" type="submit">Subscribe</button>
+                                                    <button class="btn btn-success" type="submit">Suscribete</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -422,7 +362,8 @@
 
                                         <div class="row">
                                             <div class="col-6 col-md-12 col-lg-6 clearfix bottommargin-sm">
-                                                <a href="#" class="social-icon si-dark si-colored si-facebook mb-0"
+                                                <a href="https://www.facebook.com/ExtraSincelejo"
+                                                    class="social-icon si-dark si-colored si-facebook mb-0"
                                                     style="margin-right: 10px;">
                                                     <i class="icon-facebook"></i>
                                                     <i class="icon-facebook"></i>
@@ -462,14 +403,16 @@
                     <div class="row col-mb-30">
 
                         <div class="col-md-6 text-center text-md-left">
-                            Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
-                            <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
+                            Copyrights &copy; 2021 All Rights Reserved by Kronnos<br>
+                            <div class="copyright-links"><a href="#">Terminos de uso</a> / <a href="#">Políticas de
+                                    privacidad</a>
                             </div>
                         </div>
 
                         <div class="col-md-6 text-center text-md-right">
                             <div class="d-flex justify-content-center justify-content-md-end">
-                                <a href="#" class="social-icon si-small si-borderless si-facebook">
+                                <a href="https://www.facebook.com/ExtraSincelejo"
+                                    class="social-icon si-small si-borderless si-facebook">
                                     <i class="icon-facebook"></i>
                                     <i class="icon-facebook"></i>
                                 </a>
@@ -512,9 +455,9 @@
 
                             <div class="clear"></div>
 
-                            <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i
-                                class="icon-headphones"></i> +1-11-6541-6369 <span class="middot">&middot;</span> <i
-                                class="icon-skype2"></i> CanvasOnSkype
+                            <i class="icon-envelope2"></i> noticias@costanoticiascni.com <span
+                                class="middot">&middot;</span> <i class="icon-headphones"></i> +57 300 0000 000 <span
+                                class="middot">&middot;</span> <i class="icon-skype2"></i> CostaNoticias CN&
                         </div>
 
                     </div>
@@ -522,7 +465,20 @@
                 </div>
             </div><!-- #copyrights end -->
         </footer><!-- #footer end -->
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
 
+        </script>
+        <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v10.0&appId=377904780262527&autoLogAppEvents=1"
+            nonce="RJFiRiqS"></script>
     </div><!-- #wrapper end -->
 
     <!-- Go To Top
