@@ -1,7 +1,7 @@
 @extends('layouts.page')
 @section('content')
     <!-- Content
-                                                                                                              ============================================= -->
+                                                                                                                                                                                                                                                                                                          ============================================= -->
     <section id="content">
         <div class="content-wrap">
 
@@ -45,88 +45,24 @@
                                     data-thumbs="true">
                                     <div class="flexslider">
                                         <div class="slider-wrap">
-                                            <div class="slide" data-thumb="images/magazine/thumb/1.jpg">
-                                                <a href="#">
-                                                    <img src="{{ asset('images/magazine/1.jpg') }}" alt="Image">
-                                                    <div class="bg-overlay">
-                                                        <div
-                                                            class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
-                                                            <div class="portfolio-desc py-0">
-                                                                <h3>Locked Steel Gate</h3>
-                                                                <span>Illustrations</span>
+                                            @foreach ($last as $post)
+                                                <div class="slide"
+                                                    data-thumb="{{ asset('storage/images/' . $post->image) }}">
+                                                    <a href="{{ asset('articulo/' . $post->slug) }}">
+                                                        <img src="{{ asset('storage/images/' . $post->image) }}"
+                                                            alt="Image">
+                                                        <div class="bg-overlay">
+                                                            <div
+                                                                class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
+                                                                <div class="portfolio-desc py-0">
+                                                                    <h3>{{ $post->title }}</h3>
+                                                                    <span>{!! \Illuminate\Support\Str::limit($post->title, 5, '...') !!}</span>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="slide" data-thumb="images/magazine/thumb/2.jpg">
-                                                <a href="#">
-                                                    <img src="{{ asset('images/magazine/2.jpg') }}" alt="Image">
-                                                    <div class="bg-overlay">
-                                                        <div
-                                                            class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
-                                                            <div class="portfolio-desc py-0">
-                                                                <h3>Russia hits back, says US acts like a 'bad surgeon'</h3>
-                                                                <span><i class="icon-star3 mr-1"></i><i
-                                                                        class="icon-star3 mr-1"></i><i
-                                                                        class="icon-star3 mr-1"></i><i
-                                                                        class="icon-star-half-full mr-1"></i><i
-                                                                        class="icon-star-empty"></i></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="slide" data-thumb="images/magazine/thumb/3.jpg">
-                                                <a href="#">
-                                                    <img src="{{ asset('images/magazine/3.jpg') }}" alt="Image">
-                                                    <div class="bg-overlay">
-                                                        <div
-                                                            class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
-                                                            <div class="portfolio-desc py-0">
-                                                                <h3>Locked Steel Gate</h3>
-                                                                <span>Technology</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="slide" data-thumb="{{ asset('images/magazine/4.jpg') }}">
-                                                <iframe src="https://player.vimeo.com/video/99895335" width="500"
-                                                    height="281" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                            </div>
-                                            <div class="slide" data-thumb="images/magazine/thumb/5.jpg">
-                                                <a href="#">
-                                                    <img src="{{ asset('images/magazine/5.jpg') }}" alt="Image">
-                                                    <div class="bg-overlay">
-                                                        <div
-                                                            class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
-                                                            <div class="portfolio-desc py-0">
-                                                                <h3>Locked Steel Gate</h3>
-                                                                <span><i class="icon-star3 mr-1"></i><i
-                                                                        class="icon-star3 mr-1"></i><i
-                                                                        class="icon-star3 mr-1"></i><i
-                                                                        class="icon-star-half-full mr-1"></i><i
-                                                                        class="icon-star-empty"></i></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="slide" data-thumb="images/magazine/thumb/6.jpg">
-                                                <a href="#">
-                                                    <img src="{{ asset('images/magazine/6.jpg') }}" alt="Image">
-                                                    <div class="bg-overlay">
-                                                        <div
-                                                            class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
-                                                            <div class="portfolio-desc py-0">
-                                                                <h3>Locked Steel Gate</h3>
-                                                                <span>Entertainment</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                                    </a>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -135,127 +71,41 @@
                             <div class="col-12">
 
                                 <div class="fancy-title title-border">
-                                    <h3>Technology</h3>
+                                    <h3>Actualidad</h3>
                                 </div>
 
-                                <div class="posts-md">
-                                    <div class="entry row mb-5">
-                                        <div class="col-md-6">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="{{ asset('images/magazine/7.jpg') }}"
-                                                        alt="Image"></a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mt-3 mt-md-0">
-                                            <div class="entry-title title-sm nott">
-                                                <h3><a href="blog-single.html">Toyotas next minivan will let you shout at
-                                                        your kids without turning around</a></h3>
-                                            </div>
-                                            <div class="entry-meta">
-                                                <ul>
-                                                    <li><i class="icon-calendar3"></i> 10th Feb 2021</li>
-                                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
-                                                            21</a></li>
-                                                    <li><a href="#"><i class="icon-camera-retro"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="entry-content">
-                                                <p class="mb-0">Asperiores, tenetur, blanditiis, quaerat odit ex
-                                                    exercitationem pariatur quibusdam veritatis quisquam laboriosam esse
-                                                    beatae hic perferendis.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="posts-sm row col-mb-30">
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
+                                @foreach ($posts as $post)
+                                    <div class="posts-md">
+                                        <div class="entry row mb-5">
+                                            <div class="col-md-6">
                                                 <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/1.jpg" alt="Image"></a>
+                                                    <a href="#"><img src="{{ asset('storage/images/' . $post->image) }}"
+                                                            alt="{{ $post->image }}"></a>
                                                 </div>
                                             </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">UK government weighs Tesla's Model S for its 5 million
-                                                            electric vehicle fleet</a></h4>
+                                            <div class="col-md-6 mt-3 mt-md-0">
+                                                <div class="entry-title title-sm nott">
+                                                    <h3><a
+                                                            href="{{ asset('articulo/' . $post->slug) }}">{{ $post->title }}</a>
+                                                    </h3>
                                                 </div>
                                                 <div class="entry-meta">
                                                     <ul>
-                                                        <li><i class="icon-calendar3"></i> 1st Aug 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 32</a></li>
+                                                        <li><i class="icon-calendar3"></i>
+                                                            {{ $post->created_at->diffForHumans() }}</li>
+                                                        <li><a href="{{ asset('articulo/' . $post->slug) }}"><i
+                                                                    class="icon-camera-retro"></i></a></li>
                                                     </ul>
+                                                </div>
+                                                <div class="entry-content">
+                                                    <p class="mb-0">Asperiores, tenetur, blanditiis, quaerat odit ex
+                                                        exercitationem pariatur quibusdam veritatis quisquam laboriosam esse
+                                                        beatae hic perferendis.</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/2.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">MIT's new robot glove can give you extra fingers</a>
-                                                    </h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 13th Sep 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 11</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/3.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">You can now listen to headphones through your hoodie</a>
-                                                    </h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 27th July 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 13</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/4.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">How would you change Kobo's Aura HD e-reader?</a></h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 31st Jan 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 7</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
 
                             </div>
 
@@ -263,319 +113,6 @@
                                 <img src="{{ asset('images/magazine/ad.jpg') }}" alt="Ad" class="aligncenter my-0">
                             </div>
 
-                            <div class="col-12">
-
-                                <div class="fancy-title title-border">
-                                    <h3>Entertainment</h3>
-                                </div>
-
-                                <div class="posts-md">
-                                    <div class="entry row mb-5">
-                                        <div class="col-md-6">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="images/magazine/8.jpg" alt="Image"></a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mt-3 mt-md-0">
-                                            <div class="entry-title title-sm nott">
-                                                <h3><a href="blog-single.html">Beyonce Dropped A '50 Shades Of Grey', Teaser
-                                                        On Instagram Last Night</a></h3>
-                                            </div>
-                                            <div class="entry-meta">
-                                                <ul>
-                                                    <li><i class="icon-calendar3"></i> 7th Jun 2021</li>
-                                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
-                                                            23</a></li>
-                                                    <li><a href="#"><i class="icon-camera-retro"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="entry-content">
-                                                <p class="mb-0">Neque nesciunt molestias soluta esse debitis. Magni impedit
-                                                    quae consectetur consequuntur adipisci veritatis modi a, officia cum.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="posts-sm row col-mb-30">
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/5.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">A Baseball Team Blew Up A Bunch Of Justin Bieber And
-                                                            Miley Cyrus Merch</a></h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 5th Nov 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 3</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/6.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">Want To Know The New 'Star Wars' Plot? Then This Is The
-                                                            Post For You</a></h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 29th Jul 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 22</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/7.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">Actress Skye McCole Bartusiak From 'The Patriot' Found
-                                                            Dead At 21</a></h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 12th Oct 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 47</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-md-6">
-                                        <div class="grid-inner row no-gutters">
-                                            <div class="col-auto">
-                                                <div class="entry-image">
-                                                    <a href="#"><img src="images/magazine/small/9.jpg" alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col pl-3">
-                                                <div class="entry-title">
-                                                    <h4><a href="#">Internet Slang Has Been Proof Of Satanic Worship All
-                                                            Along??? LOL!</a></h4>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 25th Mar 2021</li>
-                                                        <li><a href="#"><i class="icon-comments"></i> 56</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="col-12">
-                                <div class="fancy-title title-border">
-                                    <h3>News in Pictures</h3>
-                                </div>
-
-                                <div class="masonry-thumbs grid-container grid-6" data-big="5" data-lightbox="gallery">
-                                    <a class="grid-item" href="images/magazine/1.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/1.jpg" alt="Gallery Thumb 1"></a>
-                                    <a class="grid-item" href="images/magazine/2.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/2.jpg" alt="Gallery Thumb 2"></a>
-                                    <a class="grid-item" href="images/magazine/3.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/3.jpg" alt="Gallery Thumb 3"></a>
-                                    <a class="grid-item" href="images/magazine/4.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/4.jpg" alt="Gallery Thumb 4"></a>
-                                    <a class="grid-item" href="images/magazine/5.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/5.jpg" alt="Gallery Thumb 5"></a>
-                                    <a class="grid-item" href="images/magazine/6.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/6.jpg" alt="Gallery Thumb 6"></a>
-                                    <a class="grid-item" href="images/magazine/7.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/7.jpg" alt="Gallery Thumb 7"></a>
-                                    <a class="grid-item" href="images/magazine/8.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/8.jpg" alt="Gallery Thumb 8"></a>
-                                    <a class="grid-item" href="images/magazine/9.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/9.jpg" alt="Gallery Thumb 9"></a>
-                                    <a class="grid-item" href="images/magazine/10.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/10.jpg" alt="Gallery Thumb 10"></a>
-                                    <a class="grid-item" href="images/magazine/11.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/11.jpg" alt="Gallery Thumb 11"></a>
-                                    <a class="grid-item" href="images/magazine/12.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/12.jpg" alt="Gallery Thumb 12"></a>
-                                    <a class="grid-item" href="images/magazine/13.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/13.jpg" alt="Gallery Thumb 13"></a>
-                                    <a class="grid-item" href="images/magazine/14.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/14.jpg" alt="Gallery Thumb 14"></a>
-                                    <a class="grid-item" href="images/magazine/15.jpg" data-lightbox="gallery-item"><img
-                                            src="images/magazine/thumb/15.jpg" alt="Gallery Thumb 15"></a>
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-
-                                <div class="fancy-title title-border">
-                                    <h3>Other News</h3>
-                                </div>
-
-                                <div class="row posts-md col-mb-30">
-                                    <div class="entry col-sm-6 col-xl-4">
-                                        <div class="grid-inner">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="images/magazine/thumb/11.jpg" alt="Image"></a>
-                                            </div>
-                                            <div class="entry-title title-xs nott">
-                                                <h3><a href="blog-single.html">Yum, McDonald's apologize as new China food
-                                                        scandal brews</a></h3>
-                                            </div>
-                                            <div class="entry-meta">
-                                                <ul>
-                                                    <li><i class="icon-calendar3"></i> 9th Sep 2021</li>
-                                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
-                                                            23</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="entry-content">
-                                                <p>Neque nesciunt molestias soluta esse debitis. Magni impedit quae
-                                                    consectetur consequuntur.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-sm-6 col-xl-4">
-                                        <div class="grid-inner">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="images/magazine/thumb/16.jpg" alt="Image"></a>
-                                            </div>
-                                            <div class="entry-title title-xs nott">
-                                                <h3><a href="blog-single.html">Halliburton gets boost from rebound in North
-                                                        America drilling</a></h3>
-                                            </div>
-                                            <div class="entry-meta">
-                                                <ul>
-                                                    <li><i class="icon-calendar3"></i> 23rd Aug 2021</li>
-                                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
-                                                            33</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="entry-content">
-                                                <p>Eaque iusto quod assumenda beatae, nesciunt aliquid. Vel, eos eligendi?
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-sm-6 col-xl-4">
-                                        <div class="grid-inner">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="images/magazine/thumb/13.jpg" alt="Image"></a>
-                                            </div>
-                                            <div class="entry-title title-xs nott">
-                                                <h3><a href="blog-single.html">China sends spy ship off Hawaii during
-                                                        U.S.-led drills brews</a></h3>
-                                            </div>
-                                            <div class="entry-meta">
-                                                <ul>
-                                                    <li><i class="icon-calendar3"></i> 11th Feb 2021</li>
-                                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
-                                                            13</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="entry-content">
-                                                <p>Magni impedit quae consectetur consequuntur adipisci veritatis modi a,
-                                                    officia cum.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-sm-6 col-xl-4">
-                                        <div class="grid-inner">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="images/magazine/thumb/10.jpg" alt="Image"></a>
-                                            </div>
-                                            <div class="entry-title title-xs nott">
-                                                <h3><a href="blog-single.html">Wobbly stocks underpin yen and Swiss franc;
-                                                        dollar subdued</a></h3>
-                                            </div>
-                                            <div class="entry-meta">
-                                                <ul>
-                                                    <li><i class="icon-calendar3"></i> 17th Jan 2021</li>
-                                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
-                                                            50</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="entry-content">
-                                                <p>Neque nesciunt molestias soluta esse debitis. Magni impedit quae
-                                                    consectetur consequuntur.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-sm-6 col-xl-4">
-                                        <div class="grid-inner">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="images/magazine/thumb/15.jpg" alt="Image"></a>
-                                            </div>
-                                            <div class="entry-title title-xs nott">
-                                                <h3><a href="blog-single.html">BlackBerry names ex-Sybase executive as chief
-                                                        operating officer</a></h3>
-                                            </div>
-                                            <div class="entry-meta">
-                                                <ul>
-                                                    <li><i class="icon-calendar3"></i> 20th Nov 2021</li>
-                                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
-                                                            13</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="entry-content">
-                                                <p>Eaque iusto quod assumenda beatae, nesciunt aliquid. Vel, eos eligendi?
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-sm-6 col-xl-4">
-                                        <div class="grid-inner">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="images/magazine/thumb/6.jpg" alt="Image"></a>
-                                            </div>
-                                            <div class="entry-title title-xs nott">
-                                                <h3><a href="blog-single.html">Georgian prime minister fires seven ministers
-                                                        in first reshuffle</a></h3>
-                                            </div>
-                                            <div class="entry-meta">
-                                                <ul>
-                                                    <li><i class="icon-calendar3"></i> 10th Dec 2013</li>
-                                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i>
-                                                            13</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="entry-content">
-                                                <p>Magni impedit quae consectetur consequuntur adipisci veritatis modi a,
-                                                    officia cum.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
                         </div>
 
                     </div>
@@ -595,7 +132,7 @@
                                             <i class="icon-facebook"></i>
                                         </a>
                                         <div class="counter counter-inherit d-inline-block text-smaller"><span
-                                                class="d-block font-weight-bold" data-from="1000" data-to="58742"
+                                                class="d-block font-weight-bold" data-from="30" data-to="8000"
                                                 data-refresh-interval="100" data-speed="3000"
                                                 data-comma="true"></span><small>Likes</small></div>
                                     </div>
@@ -609,7 +146,7 @@
                                         <div class="counter counter-inherit d-inline-block text-smaller"><span
                                                 class="d-block font-weight-bold" data-from="500" data-to="9654"
                                                 data-refresh-interval="50" data-speed="2500"
-                                                data-comma="true"></span><small>Followers</small></div>
+                                                data-comma="true"></span><small>Seguidores</small></div>
                                     </div>
 
                                     <div class="col-4">
@@ -619,9 +156,9 @@
                                             <i class="icon-rss"></i>
                                         </a>
                                         <div class="counter counter-inherit d-inline-block text-smaller"><span
-                                                class="d-block font-weight-bold" data-from="200" data-to="15475"
-                                                data-refresh-interval="150" data-speed="3500"
-                                                data-comma="true"></span><small>Readers</small></div>
+                                                class="d-block font-weight-bold" data-from="10" data-to="980"
+                                                data-refresh-interval="30" data-speed="3500"
+                                                data-comma="true"></span><small>Lectores</small></div>
                                     </div>
                                 </div>
                             </div>
@@ -647,18 +184,18 @@
                             </div>
 
                             <div class="widget clearfix">
-                                <iframe src="https://player.vimeo.com/video/100299651" width="500" height="264"
-                                    allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                <img class="aligncenter" src="{{ asset('images/magazine/ad.png') }}" alt="Image">
                             </div>
 
                             <div class="widget clearfix">
-                                <img class="aligncenter" src="images/magazine/ad.png" alt="Image">
-                            </div>
-
-                            <div class="widget clearfix">
-                                <iframe
-                                    src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FEnvato&amp;width=350&amp;height=240&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=499481203443583"
-                                    style="border:none; overflow:hidden; width:350px; height:240px; max-width: 100% !important;"></iframe>
+                                <div class="fb-page" data-href="https://www.facebook.com/ExtraSincelejo"
+                                    data-tabs="timeline" data-width="" data-height="" data-small-header="false"
+                                    data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                    <blockquote cite="https://www.facebook.com/ExtraSincelejo"
+                                        class="fb-xfbml-parse-ignore"><a
+                                            href="https://www.facebook.com/ExtraSincelejo">Costa Noticias CNI</a>
+                                    </blockquote>
+                                </div>
                             </div>
 
                         </div>

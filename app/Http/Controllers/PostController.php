@@ -21,18 +21,6 @@ class PostController extends Controller
         return view('welcome',compact('posts','categories','last'));
     }
 
-    public function displayImage($filename){
-        $path = storage_public('public/images/' . $filename);
-        if (!File::exists($path)) {
-             abort(404);
-        }
-        $file = File::get($path);
-        $type = File::mimeType($path);
-        $response = dd(Response::make($file, 200));
-        $response->header("Content-Type", $type);
-        return $response;
-    }
-
     public function search($slug){
         $post = Post::where('slug',$slug)->first();
         $categories = Category::all();
