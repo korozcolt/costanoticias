@@ -22,7 +22,7 @@
     <meta property="og:title" content="Costa Noticias | CN&">
     <meta property="og:description"
         content="Sitio de noticias activas, al día, de sincelejo y toda la costa caribe colombiana.">
-    <meta property="og:image" content="{{ asset('images/logo@2x.png') }}">
+    <meta property="og:image" content="{{ asset('images/logo@2x.webp') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -30,7 +30,7 @@
     <meta property="twitter:title" content="Costa Noticias | CN&">
     <meta property="twitter:description"
         content="Sitio de noticias activas, al día, de sincelejo y toda la costa caribe colombiana.">
-    <meta property="twitter:image" content="{{ asset('images/logo@2x.png') }}">
+    <meta property="twitter:image" content="{{ asset('images/logo@2x.webp') }}">
 
     <!-- Stylesheets
  ============================================= -->
@@ -125,16 +125,16 @@
      ============================================= -->
                     <div id="logo" class="mr-0 mr-lg-auto">
                         <a href="{{ route('index') }}" class="standard-logo"
-                            data-dark-logo="{{ asset('images/logo-dark.png') }}"><img
-                                src="{{ asset('images/logo.png') }}" alt="Costa Noticias CN&"></a>
+                            data-dark-logo="{{ asset('images/logo.webp') }}"><img
+                                src="{{ asset('images/logo.webp') }}" alt="Costa Noticias CN&"></a>
                         <a href="{{ route('index') }}" class="retina-logo"
-                            data-dark-logo="{{ asset('images/logo-dark@2x.png') }}"><img
-                                src="{{ asset('images/logo@2x.png') }}" alt="Costa Noticias CN&"></a>
+                            data-dark-logo="{{ asset('images/logo@2x.webp') }}"><img
+                                src="{{ asset('images/logo@2x.web') }}" alt="Costa Noticias CN&"></a>
                     </div><!-- #logo end -->
 
                     <div class="header-misc mb-4 mb-lg-0 d-none d-lg-flex">
                         <div class="top-advert">
-                            <img src="{{ asset('images/magazine/ad.jpg') }}" alt="Ad">
+                            <img src="{{ asset('images/magazine/ad.webp') }}" alt="Ad">
                         </div>
                     </div>
                 </div>
